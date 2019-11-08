@@ -1,0 +1,28 @@
+#Question 1
+file <- read.csv("Titration Graph.csv")
+first_n_lines <- 5
+print(head(file, first_n_lines))
+
+
+
+#Question 2
+file <- read.csv("iris.csv")
+
+#Part 1
+second_column <- data.frame(file[2])
+print(tail(second_column, 2))
+
+#Part 2
+summary(file$Species)
+
+#Part 3
+print(file[file[,2] > 3.5,])
+
+#Part 4
+write.csv(file[file[,5] == "setosa",], file = "file.csv")
+
+#Part 5
+virginica <- data.frame(file[file[,5] == "virginica",])
+min(virginica[,3], na.rm = T)
+mean(virginica[,3], na.rm = T)
+max(virginica[,3], na.rm = T)
